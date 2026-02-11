@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .table-box {
+            background: #1c1c1c;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+        }
+
+        tr:hover {
+            background: #2a2a2a;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Dziękuję za bycie moją walentynką</h1>
+
+<div class="container">
+
+    <!-- TABELA 1 -->
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>❤️</th>
+                <th>Wiesz ile jesteśmy razem?</th>
+                <th>❤️</th>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td id="days-together">Ładowanie...</td>
+                <td>❤️</td>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td id="weeks-together">Ładowanie...</td>
+                <td>❤️</td>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td id="months-together">Ładowanie...</td>
+                <td>❤️</td>
+            </tr>
+           
+          
+        </table>
+    </div>
+
+    <!-- TABELA 2 -->
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>❤️</th>
+                <th>Ulubione zdjęcie</th>
+                <th>❤️</th>
+               
+            </tr>
+               <tr>
+                <th>❤️</th>
+                <th>twoje</th>
+                <th>❤️</th>
+               
+            </tr>
+            <tr>
+                  <th>❤️</th>
+                 <th><img src="28582519-f148-4720-9369-579e0d3139e1.jfif" alt="Zdjęcie" style="max-width:400px;"> </th>
+                   <th>❤️</th>
+            </tr>
+               <tr>
+                <th>❤️</th>
+                <th>moje</th>
+                <th>❤️</th>
+               
+            </tr>
+             <tr>
+                  <th>❤️</th>
+                 <th><img src="974cbd7b-b7bf-4067-baab-7e3c4c5abf81.jfif" alt="Zdjęcie" style="max-width:400px;"> </th>
+                   <th>❤️</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- TABELA 3 -->
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>❤️</th>
+                <th>us in another universe</th>
+                <th>❤️</th>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td><img src="4cc0936e-5f61-44d4-8b65-219cdb2a7782.jfif" alt="Zdjęcie" style="max-width:400px;"></td>
+                <td>❤️</td>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td><img src="fb446861-85c6-416a-9475-9a08055fd6de.jfif" alt="Zdjęcie" style="max-width:400px;"></td>
+                <td>❤️</td>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td><img src="Zrzut ekranu 2026-02-09 160008.png" alt="Zdjęcie" style="max-width:400px;"></td>
+                <td>❤️</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<script>
+   
+    const startDate = new Date("2023-04-30T00:00:00");
+
+    function updateCounters() {
+        const now = new Date();
+        let diff = Math.floor((now - startDate) / 1000); 
+
+        const days = Math.floor(diff / 86400);
+        diff %= 86400;
+
+        const hours = Math.floor(diff / 3600);
+        diff %= 3600;
+
+        const minutes = Math.floor(diff / 60);
+        const seconds = diff % 60;
+
+        const weeks = Math.floor(days / 7);
+        const months = Math.floor(days / 30); 
+
+        document.getElementById("days-together").textContent =
+            `${days} dni`;
+
+        document.getElementById("weeks-together").textContent =
+            `${weeks} tygodni`;
+
+        document.getElementById("months-together").textContent =
+            `${months} miesięcy`;
+    }
+
+    updateCounters();
+   setInterval(updateCounters, 1000 * 60 * 60); 
+</script>
+
+
+
+
+</body>
+</html>

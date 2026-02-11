@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynka</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<video id="video" autoplay controls>
+    <source src="Generate_a_video_where_small_ginger_and_purple_hearts_come_together_to_form_one_big_heart_on_a_black_seed1472143559.mp4" type="video/mp4">
+    Twoja przeglądarka nie obsługuje wideo.
+</video>
+
+<script>
+    const video = document.getElementById('video');
+
+    video.addEventListener('ended', () => {
+        window.location.href = "takdalej.html"; 
+    });
+</script>
+
+</body>
+</html>
